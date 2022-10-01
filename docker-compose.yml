@@ -1,0 +1,14 @@
+services:
+  gcc:
+    image: raspi_cross_gcc
+    build: raspi_cross_gcc
+    entrypoint: bash
+  main:
+    image: raspi_cross_ros2
+    build: .
+    volumes:
+      - ./bin:/home/pi/bin
+      - ~/raspi:/raspi
+      - ~/raspi/usr/lib/gcc:/cross/lib/gcc
+      - ~/ros2_ws:/home/pi/ros2_ws
+    entrypoint: bash

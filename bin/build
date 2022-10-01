@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -d /raspi ] || [ ! "$(ls -A /raspi)" ]; then
+    echo
+    echo "Please, copy /raspi directory first:"
+    echo "    rsync -rlu --copy-unsafe-links --info=progress2 pi@<raspi>:/{lib,usr} ~/raspi"
+    echo
+    exit 1
+fi
+
+colcon build \
+    "$@" \
+    --merge-install \
+    --cmake-args \
+    -DCMAKE_TOOLCHAIN_FILE=~/bin/toolchain.cmake \
+    -DCMAKE_FIND_ROOT_PATH=~/ros2_ws/install \
+    -DCMAKE_VERBOSE_MAKEFILE=ON
