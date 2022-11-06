@@ -33,21 +33,21 @@ docker compose run --rm main
 
 Inside the docker, clone ROS2 repositories:
 ```
-~/bin/init
+piinit
 ```
 
 Build needed packages.
 
 * Examples:
 ```
-~/bin/build --packages-up-to demo_nodes_cpp demo_nodes_py
-~/bin/build --packages-select rclcpp
-~/bin/build --continue-on-error --parallel-workers 4
+pibuild --packages-up-to demo_nodes_cpp demo_nodes_py
+pibuild --packages-select rclcpp
+pibuild --continue-on-error --parallel-workers 4
 ```
 
 Copy ros workspace back to RasPi (either from Ubuntu or from Docker):
 ```
-rsync -rlu --del --info=progress2 ~/ros2_ws/install/ pi@<rpi>:/home/pi/ros2
+rsync -rlu --del --info=progress2 ~/ros2_ws/install/ pi@<rpi>:/home/pi/ros2_ws/install/
 ```
 
 ## Test

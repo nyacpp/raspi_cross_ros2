@@ -25,7 +25,8 @@ RUN pip install --no-cache-dir \
 	rosinstall_generator \
 	vcstool
 	
-ENV PATH=/home/pi/.local/bin/:$PATH
+ENV PATH=/home/pi/.local/bin:$PATH
+COPY --chown=pi:pi bin /home/pi/.local/bin
+COPY --chown=pi:pi cmake/toolchain.cmake ros/
 
-# ROS workspace
-WORKDIR /home/pi/ros2_ws
+WORKDIR /home/pi

@@ -27,6 +27,7 @@ set(c_flags
 		-Wl,-rpath-link,${CMAKE_SYSROOT}/usr/lib
 		-Wl,-rpath-link,${CMAKE_SYSROOT}/usr/lib/arm-linux-gnueabihf
 		-Wl,-rpath-link,${CMAKE_SYSROOT}/usr/lib/gcc/arm-linux-gnueabihf/10
+		-Wno-psabi   # https://stackoverflow.com/questions/48149323/what-does-the-gcc-warning-project-parameter-passing-for-x-changed-in-gcc-7-1-m
 )
 string(REPLACE ";" " " c_flags_string "${c_flags}")
 string(APPEND CMAKE_C_FLAGS_INIT " ${c_flags_string}")

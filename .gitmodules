@@ -1,4 +1,4 @@
 [submodule "raspi_cross_gcc"]
 	path = raspi_cross_gcc
-	url = https://github.com/nyacpp/raspi_cross_gcc.git
+	url = git@github.com:nyacpp/raspi_cross_gcc.git
 	branch = master
