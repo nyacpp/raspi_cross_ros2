@@ -1,5 +1,5 @@
 #!/bin/bash
 
-export ROS_PACKAGE_PATH=~/ros2_ws/src
+export ROS_PACKAGE_PATH=~/ros_humble/src
 rosinstall_generator $1 --deps --exclude RPP --rosdistro humble > /tmp/rospkgs.repos
 vcs import ${ROS_PACKAGE_PATH} < /tmp/rospkgs.repos

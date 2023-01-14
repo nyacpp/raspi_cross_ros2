@@ -47,7 +47,7 @@ pibuild --continue-on-error --parallel-workers 4
 
 Copy ros workspace back to RasPi (either from Ubuntu or from Docker):
 ```
-rsync -rlu --del --info=progress2 ~/ros2_ws/install/ pi@<rpi>:/home/pi/ros2_ws/install/
+rsync -rlu --del --info=progress2 ~/ros_humble/install/ pi@<rpi>:/home/pi/ros_humble/install/
 ```
 
 ## Test

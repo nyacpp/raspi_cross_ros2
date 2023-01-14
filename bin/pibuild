@@ -8,12 +8,12 @@ if [ ! -d /raspi ] || [ ! "$(ls -A /raspi)" ]; then
     exit 1
 fi
 
-source ~/ros2_ws/install/setup.bash 2>/dev/null
+source ~/ros_humble/install/setup.bash 2>/dev/null
 
 colcon build \
     "$@" \
     --merge-install \
     --cmake-args \
-    -DCMAKE_TOOLCHAIN_FILE=~/ros/toolchain.cmake \
-    -DCMAKE_FIND_ROOT_PATH=~/ros2_ws/install \
+    -DCMAKE_TOOLCHAIN_FILE=~/rcar/toolchain.cmake \
+    -DCMAKE_FIND_ROOT_PATH=~/ros_humble/install \
     -DCMAKE_VERBOSE_MAKEFILE=ON

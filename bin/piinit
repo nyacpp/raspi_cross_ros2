@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Clone ROS2 repos.
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws
+mkdir -p ~/ros_humble/src
+cd ~/ros_humble
 wget https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
-vcs import ~/ros2_ws/src < ros2.repos
+vcs import ~/ros_humble/src < ros2.repos
 
 # Ignore packages which depend on unused stuff like GUI.
-cd ~/ros2_ws/src
+cd ~/ros_humble/src
 touch ignition/COLCON_IGNORE
 touch ros/resource_retriever/COLCON_IGNORE
 touch ros/ros_tutorials/COLCON_IGNORE

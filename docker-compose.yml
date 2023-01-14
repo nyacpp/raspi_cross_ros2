@@ -9,6 +9,6 @@ services:
     volumes:
       - ~/raspi:/raspi
       - ~/raspi/usr/lib/gcc:/cross/lib/gcc
-      - ~/ros2_ws:/home/pi/ros2_ws
+      - ~/ros_humble:/home/pi/ros_humble
     entrypoint: bash
-    working_dir: /home/pi/ros2_ws
+    working_dir: /home/pi/ros_humble
