@@ -13,9 +13,10 @@ Install armhf libraries on RasPi.
 sudo apt install \
     liblog4cxx-dev \
     python3-dev \
-    python3-pybind11 \
-    python3-numpy \
+    python3-lark \
     python3-netifaces \
+    python3-numpy \
+    python3-pybind11 \
     python3-yaml
 ```
 

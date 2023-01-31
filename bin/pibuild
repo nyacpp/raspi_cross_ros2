@@ -14,6 +14,5 @@ colcon build \
     "$@" \
     --merge-install \
     --cmake-args \
-    -DCMAKE_TOOLCHAIN_FILE=~/rcar/toolchain.cmake \
-    -DCMAKE_FIND_ROOT_PATH=~/ros_humble/install \
+    -DCMAKE_TOOLCHAIN_FILE=~/toolchain.cmake \
     -DCMAKE_VERBOSE_MAKEFILE=ON

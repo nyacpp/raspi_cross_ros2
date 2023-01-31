@@ -11,9 +11,13 @@ RUN apt-get update && apt-get install -y \
 	python3-pip \
 	qemu-user-static \
 	rsync \
+	sshfs \
 	tar \
 	wget \
 	&& rm -rf /var/lib/apt/lists/*
+
+# fix fuse.conf
+RUN sed -i '/#user_allow_other/s/^#//g' /etc/fuse.conf
 
 USER pi
 
@@ -24,9 +28,9 @@ RUN pip install --no-cache-dir \
 	numpy \
 	rosinstall_generator \
 	vcstool
-	
-ENV PATH=/home/pi/.local/bin:$PATH
-COPY --chown=pi:pi bin /home/pi/.local/bin
-COPY --chown=pi:pi cmake/toolchain.cmake ros/
 
 WORKDIR /home/pi
+
+ENV PATH=/home/pi/.local/bin:$PATH
+COPY --chown=pi:pi bin .local/bin
+COPY --chown=pi:pi cmake/toolchain.cmake ./

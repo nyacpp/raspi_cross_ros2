@@ -6,6 +6,7 @@ set(CMAKE_CROSSCOMPILING_EMULATOR /usr/bin/qemu-arm-static)
 set(CMAKE_C_COMPILER /cross/bin/arm-linux-gnueabihf-gcc)
 set(CMAKE_CXX_COMPILER /cross/bin/arm-linux-gnueabihf-g++)
 
+set(CMAKE_FIND_ROOT_PATH ${CMAKE_INSTALL_PREFIX} $ENV{HOME}/ros_humble/install)
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
@@ -13,7 +14,8 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_SYSROOT /raspi CACHE PATH "")
 
 set(BUILD_TESTING OFF CACHE STRING "")  # turn off ROS tests
-set(PYTHON_SOABI cpython-39-arm-linux-gnueabihf CACHE STRING "")  # python: sysconfig.get_config_var('SOABI')
+set(Python_EXECUTABLE /usr/bin/python)  # if not set, it will use the one from /raspi
+set(Python_SOABI cpython-39-arm-linux-gnueabihf CACHE STRING "")  # python: sysconfig.get_config_var('SOABI')
 set(PYTHON_MODULE_EXTENSION .${PYTHON_SOABI}.so CACHE STRING "")  # _rclpy_pybind11 suffix
 
 # Some of ROS2 nodes do not accept CMAKE_TOOLCHAIN_FILE argument,
