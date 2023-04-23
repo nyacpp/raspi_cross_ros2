@@ -41,7 +41,7 @@ Build needed packages.
 
 * Examples:
 ```
-pibuild --packages-up-to demo_nodes_cpp demo_nodes_py
+pibuild --packages-up-to dummy_robot_bringup ros2cli_common_extensions demo_nodes_cpp demo_nodes_py
 pibuild --packages-select rclcpp
 pibuild --continue-on-error --parallel-workers 4
 ```

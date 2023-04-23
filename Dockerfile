@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
 	cmake \
 	git \
 	nano \
+    pkg-config \
 	python-is-python3 \
 	python3-pip \
 	qemu-user-static \

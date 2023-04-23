@@ -15,4 +15,6 @@ colcon build \
     --merge-install \
     --cmake-args \
     -DCMAKE_TOOLCHAIN_FILE=~/toolchain.cmake \
-    -DCMAKE_VERBOSE_MAKEFILE=ON
+    -DCMAKE_VERBOSE_MAKEFILE=ON \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo
