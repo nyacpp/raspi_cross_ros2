@@ -1,10 +1,10 @@
 services:
   gcc:
-    image: raspi_cross_gcc
+    image: nyacpp/raspi_cross_gcc
     build: raspi_cross_gcc
     entrypoint: bash
   main:
-    image: raspi_cross_ros2
+    image: nyacpp/raspi_cross_ros2
     build: .
     volumes:
       - ~/raspi:/raspi

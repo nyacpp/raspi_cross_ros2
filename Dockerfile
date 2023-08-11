@@ -1,4 +1,4 @@
-FROM raspi_cross_gcc
+FROM nyacpp/raspi_cross_gcc
 
 USER root
 
