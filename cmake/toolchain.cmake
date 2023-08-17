@@ -22,8 +22,8 @@ set(ENV{PKG_CONFIG_SYSROOT_DIR} ${CMAKE_SYSROOT})
 # python
 set(BUILD_TESTING OFF CACHE STRING "")  # turn off ROS tests
 set(Python_EXECUTABLE /usr/bin/python)  # if not set, it will use the one from /raspi
-set(Python_SOABI cpython-39-arm-linux-gnueabihf CACHE STRING "")  # python: sysconfig.get_config_var('SOABI')
-set(PYTHON_MODULE_EXTENSION .${Python_SOABI}.so CACHE STRING "")  # _rclpy_pybind11 suffix
+set(PYTHON_SOABI cpython-39-arm-linux-gnueabihf CACHE STRING "")  # python: sysconfig.get_config_var('SOABI')
+set(PYTHON_MODULE_EXTENSION .${PYTHON_SOABI}.so CACHE STRING "")  # _rclpy_pybind11 suffix
 
 # Some of ROS2 nodes do not accept CMAKE_TOOLCHAIN_FILE argument,
 # so the workaround is to use only C/CXX_FLAGS.
