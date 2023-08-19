@@ -10,5 +10,5 @@ services:
       - ~/raspi:/raspi
       - ~/raspi/usr/lib/gcc:/cross/lib/gcc
       - ~/ros_humble:/home/pi/ros_humble
-    entrypoint: bash
     working_dir: /home/pi/ros_humble
+    command: bash
